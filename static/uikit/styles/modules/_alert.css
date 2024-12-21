@@ -1,0 +1,58 @@
+.alert {
+  display: flex; /* Flexbox for alignment */
+  gap: 1rem; /* Spacing between the alert content and close button */
+  justify-content: space-between; /* Align content within the box */
+  align-items: center;
+  padding: 1.5rem 2rem; /* Padding for proper spacing */
+  border-radius: 8px; /* Rounded corners */
+  border: 1px solid var(--color-white-light);
+  position: fixed; /* Keeps the alert fixed relative to the viewport */
+  top: 100px; /* Distance from the top of the viewport */
+  left: 50%; /* Centers horizontally relative to the viewport */
+  transform: translateX(-50%); /* Ensures perfect horizontal centering */
+  max-width: 90%; /* Alert adapts to content but won't exceed 90% of the screen width */
+  background-color: var(--color-main-light); /* Alert background */
+  color: var(--color-main); /* Text color */
+  font-size: 1.4rem; /* Font size */
+  font-weight: bold;
+  z-index: 1000; /* Ensures it appears above other elements */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a clean look */
+  box-sizing: border-box; /* Ensures padding is included in size calculations */
+}
+
+.alert p {
+  margin: 0; /* Remove default margin on the paragraph to avoid unnecessary spacing */
+  word-wrap: break-word; /* Ensures long text wraps within the alert */
+}
+.alert,
+.alert > .alert__message {
+  background-color: var(--color-main-light);
+  color: var(--color-main);
+  font-size: 1.4rem;
+  font-weight: var(--font-medium);
+}
+
+.alert.alert--error,
+.alert.alert--error > .alert__message {
+  background-color: var(--color-error-bg);
+  color: var(--color-error);
+}
+
+.alert.alert--success,
+.alert.alert--success > .alert__message {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.alert > .alert__close {
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  outline: transparent;
+  font-size: 2rem;
+  transition: var(--generic-transition);
+}
+
+.alert > .alert__close:hover {
+  opacity: 0.85;
+}
